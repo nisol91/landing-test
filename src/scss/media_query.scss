@@ -1,0 +1,74 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+//================
+// Super Large devices (large desktops, 2000px and down)
+//================
+
+@media (max-width: 2000px) and (min-width: 1400px) {}
+
+//================
+// Large devices (large desktops, 1400px and down)
+//================
+
+@media (max-width: 1400px) and (min-width: 992px) {}
+
+//================
+// Medium devices (desktops, 992px and down)
+//================
+
+@media (max-width: 992px) and (min-width: 768px) {}
+
+
+//================
+// Small devices (tablets, 768px and down)
+//================
+
+@media (max-width: 768px) {
+	.navbar {
+		height: auto !important;
+		flex-direction: column;
+		padding: 20px !important;
+		background: $nav-background-color-nav !important;
+		z-index: 9990 !important;
+		justify-content: flex-start;
+	}
+
+	.rightNavbar {
+		width: 100%;
+		padding: 0 15%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		height: 200px !important;
+	}
+
+	.leftNavbar {
+		width: 100% !important;
+		display: flex;
+		justify-content: center;
+	}
+
+	.showNavBtn {
+		display: block !important;
+		position: fixed;
+		top: 20px;
+		left: 20px;
+		z-index: 9999;
+	}
+
+	.hide {
+		display: none !important;
+	}
+
+
+}
+
+//================
+// Extra Small devices (tablets, 450px and down)
+//================
+
+@media (max-width: 450px) and (min-width: 320px) {}
+
+//=====================******************
