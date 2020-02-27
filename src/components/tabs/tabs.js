@@ -4,18 +4,12 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./tabs.scss";
-import json1 from "../../assets/ajax/tab1";
-import json2 from "../../assets/ajax/tab2";
-import json3 from "../../assets/ajax/tab3";
 import spinner from "../../assets/images/loader.png";
 
 class Tabs extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tab1: json1,
-      tab2: json2,
-      tab3: json3,
       fetchArray: [],
       tabContent: []
     };
@@ -41,8 +35,6 @@ class Tabs extends Component {
       fetchArray: array,
       tabContent: array[0].item.content
     });
-
-    console.log(this.state.fetchArray);
   }
 
   selectTab(id) {
@@ -52,7 +44,6 @@ class Tabs extends Component {
     var selectedItemContent;
     this.state.fetchArray.forEach(el => {
       if (el.item.id === id) {
-        console.log(el.item.content);
         el.item.active = true;
         selectedItemContent = el.item.content;
       } else {
