@@ -19,8 +19,6 @@ import {
 } from "react-scroll";
 import ScrollTrigger from "react-scroll-trigger";
 import HamburgerMenu from "react-hamburger-menu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMobile, faAddressCard } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../assets/images/logo-playground-white.png";
 
 class Main extends Component {

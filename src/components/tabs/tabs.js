@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-
+import Async from "react-async";
+import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./tabs.scss";
 import json1 from "../../assets/ajax/tab1";
 import json2 from "../../assets/ajax/tab2";
 import json3 from "../../assets/ajax/tab3";
+import spinner from "../../assets/images/loader.png";
 
 class Tabs extends Component {
   constructor(props) {
@@ -11,36 +15,94 @@ class Tabs extends Component {
     this.state = {
       tab1: json1,
       tab2: json2,
-      tab3: json3
+      tab3: json3,
+      fetchArray: [],
+      tabContent: []
     };
   }
 
-  fetchData() {
-    var fetchedTitle = json1.item.title;
-    var fetchedSubTitle = json1.item.content;
-    console.log("====================================");
-    console.log(fetchedTitle);
-    console.log(fetchedSubTitle);
-    console.log(json1);
+  async fetchData() {
+    var array = [];
+    for (let i = 1; i <= 3; i++) {
+      await axios.get(`tab${i}.json`).then(response => {
+        response.data.item["id"] = i;
 
-    console.log("====================================");
+        if (response.data.item["id"] === 1) {
+          response.data.item["active"] = true;
+        } else {
+          response.data.item["active"] = false;
+        }
+
+        array.push(response.data);
+      });
+    }
+
     this.setState({
-      title1: fetchedTitle,
-      subTitle1: fetchedSubTitle
+      fetchArray: array,
+      tabContent: array[0].item.content
     });
+
+    console.log(this.state.fetchArray);
+  }
+
+  selectTab(id) {
+    this.setState({
+      tabContent: ""
+    });
+    var selectedItemContent;
+    this.state.fetchArray.forEach(el => {
+      if (el.item.id === id) {
+        console.log(el.item.content);
+        el.item.active = true;
+        selectedItemContent = el.item.content;
+      } else {
+        el.item.active = false;
+      }
+    });
+    setTimeout(() => {
+      this.setState({
+        tabContent: selectedItemContent
+      });
+    }, 800);
   }
 
   componentDidMount() {
-    console.log("====================================");
-    console.log(this.state.tab1);
-    console.log("====================================");
+    this.fetchData();
   }
 
   render() {
     return (
       <div className="tabsBox">
-        <div className="tabsNav"></div>
-        <div className="tabsCont"></div>
+        <div className="tabsNav">
+          {this.state.fetchArray.map((tabEl, key) => (
+            <React.Fragment key={key}>
+              <div
+                className={
+                  tabEl.item.active ? "tabsNavItemActive" : "tabsNavItem"
+                }
+                onClick={() => {
+                  this.selectTab(tabEl.item.id);
+                }}
+              >
+                {tabEl.item.title}
+                <FontAwesomeIcon
+                  icon={faChevronUp}
+                  className={
+                    tabEl.item.active ? "tabNavIconActive" : "tabNavIcon"
+                  }
+                />
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+
+        <div className="tabsCont">
+          {this.state.tabContent !== "" ? (
+            <div className="tabsContItem">{this.state.tabContent}</div>
+          ) : (
+            <img src={spinner} alt="" className="tabSpinner" />
+          )}
+        </div>
       </div>
     );
   }

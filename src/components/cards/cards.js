@@ -39,19 +39,21 @@ class Cards extends Component {
     return (
       <div className="cards">
         {this.state.cards.map((item, key) => (
-          <div className="card">
-            <div className="cardTitle">
-              {item.src != null ? (
-                <img src={item.src} alt="" className="cardImg" />
-              ) : (
-                <img src={item.src2} alt="" className="cardImg2" />
-              )}
+          <React.Fragment key={key}>
+            <div className="card">
+              <div className="cardTitle">
+                {item.src != null ? (
+                  <img src={item.src} alt="" className="cardImg" />
+                ) : (
+                  <img src={item.src2} alt="" className="cardImg2" />
+                )}
+              </div>
+              <div className="cardCont">
+                <h1 className="cardContText">{item.cont}</h1>
+              </div>
+              <div className="cardFooter">READ MORE</div>
             </div>
-            <div className="cardCont">
-              <h1 className="cardContText">{item.cont}</h1>
-            </div>
-            <div className="cardFooter">READ MORE</div>
-          </div>
+          </React.Fragment>
         ))}
       </div>
     );

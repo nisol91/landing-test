@@ -14,11 +14,7 @@ class MyCarousel extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log("====================================");
-    console.log(this.state.imgList);
-    console.log("====================================");
-  }
+  componentDidMount() {}
   render() {
     const CarouselStyled = styled(Carousel)`
       margin: 0 auto;
@@ -74,12 +70,12 @@ class MyCarousel extends Component {
     return (
       <div className="carouselContainer">
         <CarouselStyled
-          slidesToShow={"1"}
-          dragging="true"
-          swiping="true"
-          wrapAround="true"
-          autoplay="true"
-          autoplayInterval="2000"
+          slidesToShow={1}
+          dragging={true}
+          swiping={true}
+          wrapAround={true}
+          autoplay={true}
+          autoplayInterval={2000}
         >
           {this.state.imgList.map((img, index) => (
             <React.Fragment key={index}>
