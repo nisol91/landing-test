@@ -3,6 +3,7 @@
 @import "transitions";
 
 
+
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Red+Hat+Text&display=swap');
@@ -60,6 +61,46 @@ a {
   }
 }
 
+.cookieBanner {
+  width: 100%;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0px;
+  background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9998;
+  flex-direction: column;
+
+  .cbTitle {
+    font-size: 20px;
+    margin: 5px 0;
+
+  }
+
+  .cbContent {
+    margin: 5px 0;
+  }
+
+  .cbBtn {
+    margin: 5px 0;
+    border: 1px solid black;
+    padding: 5px;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+
+    &:hover {
+      transition: 1s;
+      background: black;
+      color: lightgrey;
+    }
+  }
+}
 
 // splash screen 
 .splashScreen {

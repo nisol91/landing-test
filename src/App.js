@@ -13,7 +13,8 @@ class App extends Component {
 
     this.state = {
       splashScreen: true,
-      hideSplash: false
+      hideSplash: false,
+      showCookie: true
     };
   }
   componentDidMount() {
@@ -34,6 +35,25 @@ class App extends Component {
         <Router>
           <div className="contenitore">
             <div className="main" onClick={this.hideNav}>
+              {sessionStorage.getItem("value") === null ? (
+                <div className="cookieBanner">
+                  <div className="cbTitle">Informazioni sui Cookie</div>
+                  <div className="cbContent">
+                    Per sapere di più su come questo sito utilizza i cookie,
+                    leggi la nostra cookie policy. Chiudendo questo messaggio
+                    informativo o navigando, accetti l'utilizzo dei cookie.
+                  </div>
+                  <div
+                    className="cbBtn"
+                    onClick={() => {
+                      sessionStorage.setItem("value", "value");
+                      this.setState({ showCookie: false });
+                    }}
+                  >
+                    OK
+                  </div>
+                </div>
+              ) : null}
               {!this.state.hideSplash ? (
                 <div
                   className={`splashScreen  ${this.state.splashScreen ===
