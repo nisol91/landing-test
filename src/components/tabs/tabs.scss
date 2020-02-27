@@ -1,0 +1,23 @@
+@import "./src/scss/variables";
+
+
+.tabsBox {
+  width: 100%;
+  padding: 50px;
+  background: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tabsCont {
+  width: 70%;
+  height: 400px;
+  background: white;
+}
+
+.tabsNav {
+  width: 30%;
+  height: 300px;
+  background: grey;
+}

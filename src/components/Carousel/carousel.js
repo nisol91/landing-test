@@ -46,6 +46,28 @@ class MyCarousel extends Component {
       }
       .slider-control-centerright {
         button {
+          visibility: hidden;
+        }
+        button:after {
+          visibility: visible;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          content: ">";
+        }
+      }
+      .slider-control-centerleft {
+        button {
+          visibility: hidden;
+        }
+        button:after {
+          visibility: visible;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%);
+          content: "<";
         }
       }
     `;

@@ -3,6 +3,13 @@ import { translate } from "react-i18next";
 import "./main.scss";
 import Footer from "../footer/footer";
 import MyCarousel from "../Carousel/carousel";
+import Cards from "../cards/cards";
+import Tabs from "../tabs/tabs";
+import WeAre from "../weare/weare";
+import WeDo from "../wedo/wedo";
+import Careers from "../careers/careers";
+import Contacts from "../contacts/contacts";
+
 import {
   Link as ScrollLink,
   Element,
@@ -21,15 +28,13 @@ class Main extends Component {
     super(props);
     this.state = {
       toggleClass: true,
-      scrollProjects: false,
-      scrollContacts: false,
       toggleNav: false,
       hideNavbar: true,
       navItems: [
-        { id: 1, name: "we are", ref: "home", offset: 0 },
-        { id: 2, name: "we do", ref: "about", offset: -80 },
-        { id: 3, name: "careers", ref: "careers", offset: -80 },
-        { id: 4, name: "contact us", ref: "contacts", offset: -80 }
+        { id: 1, name: "we are", ref: "weare", offset: 0 },
+        { id: 2, name: "we do", ref: "wedo", offset: 0 },
+        { id: 3, name: "careers", ref: "careers", offset: 0 },
+        { id: 4, name: "contact us", ref: "contacts", offset: 0 }
       ],
       imagesList: [
         { src: require("../../assets/images/slide-circle.jpg") },
@@ -117,10 +122,6 @@ class Main extends Component {
                   to={""}
                   className={`navItemStyle lineThroughNav`}
                   onClick={() => {
-                    this.setState({
-                      scrollContacts: true,
-                      scrollProjects: true
-                    });
                     setTimeout(() => {
                       this.scrollTo(item.ref, item.offset);
                     }, 300);
@@ -146,27 +147,68 @@ class Main extends Component {
         <div className="boxHome">
           <MyCarousel data={this.state.imagesList}></MyCarousel>
           <div className="textHomeBox">
-            <h1 className="home1">TITOLO</h1>
-            <ScrollLink to={""} className="" onClick={() => {}}>
-              <div className="myBtnContact">Sottotitolo</div>
-            </ScrollLink>
+            <h1 className="home1">lorem</h1>
+            <h1 className="home1">ipsum.</h1>
+
+            <h1 className="home2">
+              Consectetur adipiscing elit. Nulla condimentum tortor sem, in
+              semper nisl bibendum eu.
+            </h1>
+
+            <ScrollLink to={""} className="" onClick={() => {}}></ScrollLink>
           </div>
         </div>
 
         {/* ============= */}
 
-        {this.state.scrollContacts ? (
-          <div>
-            <ScrollTrigger
-              className="scrollTrigger"
-              onEnter={this.onEnterViewportContacts}
-              onExit={this.onExitViewportContacts}
-            ></ScrollTrigger>
-            <Element name="contacts" className="contactPlaceholder">
-              {this.state.contactsVisible ? <h1>contact us</h1> : null}
-            </Element>
-          </div>
-        ) : null}
+        {/* ======all other components======= */}
+
+        <Cards></Cards>
+
+        <div>
+          <ScrollTrigger
+            className="scrollTrigger"
+            onEnter={this.onEnterViewportContacts}
+            onExit={this.onExitViewportContacts}
+          ></ScrollTrigger>
+          <Element name="weare" className="">
+            <WeAre></WeAre>
+          </Element>
+        </div>
+        <div>
+          <ScrollTrigger
+            className="scrollTrigger"
+            onEnter={this.onEnterViewportContacts}
+            onExit={this.onExitViewportContacts}
+          ></ScrollTrigger>
+          <Element name="wedo" className="">
+            <WeDo></WeDo>
+          </Element>
+        </div>
+        <div>
+          <ScrollTrigger
+            className="scrollTrigger"
+            onEnter={this.onEnterViewportContacts}
+            onExit={this.onExitViewportContacts}
+          ></ScrollTrigger>
+          <Element name="careers" className="">
+            <Careers></Careers>
+          </Element>
+        </div>
+
+        <Tabs></Tabs>
+
+        <div>
+          <ScrollTrigger
+            className="scrollTrigger"
+            onEnter={this.onEnterViewportContacts}
+            onExit={this.onExitViewportContacts}
+          ></ScrollTrigger>
+          <Element name="contacts" className="">
+            <Contacts></Contacts>
+          </Element>
+        </div>
+
         <Footer></Footer>
       </div>
     );

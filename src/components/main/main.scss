@@ -2,182 +2,193 @@
 
 //portfolioSp=========================
 .boxMainContent {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 
-  .home1 {
-    font-size: 70px;
-    font-weight: bold;
-    color: $title-color;
-  }
+	.home1 {
+		font-size: 50px;
+		font-weight: bold;
+		color: $title-color;
+		text-align: left;
+	}
+
+	.home2 {
+		font-size: 20px;
+		font-weight: bold;
+		color: $title-color;
+		text-align: left;
+
+	}
 }
 
 .boxHome {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
 }
 
 .textHomeBox {
-  position: absolute;
-  width: 30%;
-  height: 400px;
-  top: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9997;
+	position: absolute;
+	width: 25%;
+	height: 300px;
+	top: 250px;
+	left: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	z-index: 9997;
 }
 
+//navbar & scroll
+
 .navbar {
-  width: 100%;
-  height: 140px;
-  background: rgba(0, 0, 0, 0.274);
-  position: fixed;
-  top: 0;
-  z-index: 9998;
-  transition: 0.5s;
-  display: flex;
+	width: 100%;
+	height: 140px;
+	background: rgba(0, 0, 0, 0.274);
+	position: fixed;
+	top: 0;
+	z-index: 9998;
+	transition: 0.5s;
+	display: flex;
 }
 
 .coloredNav {
-  background: $navbar-color;
-  height: 80px;
-  transition: 0.5s;
+	background: $navbar-color;
+	height: 80px;
+	transition: 0.5s;
 }
 
 .logoNav {
-  margin-left: 5px;
-  max-width: 200px;
-  transition: 0.5s;
+	margin-left: 5px;
+	max-width: 200px;
+	transition: 0.5s;
 }
 
 .logoNavSmall {
-  max-width: 100px;
-  transition: 0.5s;
+	max-width: 100px;
+	transition: 0.5s;
 }
 
 .leftNavbar {
-  width: 20%;
-  height: auto;
-  padding: 10px 0;
+	width: 20%;
+	height: auto;
+	padding: 10px 0;
 }
 
 .topText {
-  color: $navbar-item-color;
-  font-size: 13px;
-  margin-left: 5px;
+	color: $navbar-item-color;
+	font-size: 13px;
+	margin-left: 5px;
 }
 
 .firstRow {
-  display: flex;
-  border-bottom: 0.5px dotted $navbar-item-borders-color;
+	display: flex;
+	border-bottom: 0.5px dotted $navbar-item-borders-color;
 }
 
 .navIcon {
-  color: $navbar-item-color;
-  margin-right: 5px;
-  margin-left: 20px;
+	color: $navbar-item-color;
+	margin-right: 5px;
+	margin-left: 20px;
 }
 
 .hideFirstRow {
-  display: none;
+	display: none;
 }
 
 .rightNavbar {
-  width: 80%;
-  padding: 0 5%;
-  display: flex;
-  justify-content: flex-end;
+	width: 80%;
+	padding: 0 5%;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .navItemStyle {
-  color: $navbar-item-color !important;
-  width: 100%;
-  height: 100%;
-  padding: 5px 20px;
-  font-size: 14px;
+	color: $navbar-item-color !important;
+	width: 100%;
+	height: 100%;
+	padding: 5px 20px;
+	font-size: 14px;
 
-  &:hover {
-    color: $navbar-item-color !important;
-  }
+	&:hover {
+		color: $navbar-item-color !important;
+	}
 }
 
 .showNavBtn {
-  display: none;
+	display: none;
 }
 
 .navItem {
-  position: relative;
+	position: relative;
 
-  cursor: pointer;
-  display: flex !important;
-  justify-content: space-between;
-  align-items: center;
+	cursor: pointer;
+	display: flex !important;
+	justify-content: space-between;
+	align-items: center;
 
-  &:hover {
-  }
+	&:hover {}
 }
 
 .active {
-  width: 100%;
-  height: 100%;
-  padding: 5px 15px;
-  border: 0.5px solid $navbar-item-borders-color;
+	width: 100%;
+	height: 100%;
+	padding: 5px 15px;
+	border: 0.5px solid $navbar-item-borders-color;
 }
 
 .scrollTrigger {
-  position: absolute;
-  margin-top: 20%;
-  width: 100px;
-  height: 5vh;
-  // background: red;
-  z-index: 9999;
+	position: absolute;
+	margin-top: 20%;
+	width: 100px;
+	height: 5vh;
+	// background: red;
+	z-index: 9999;
 }
 
 //line through navbar
 
 .lineThroughNav {
-  position: relative;
-  display: block;
-  cursor: pointer;
+	position: relative;
+	display: block;
+	cursor: pointer;
 }
 
 .lineThroughNav:before,
 .lineThroughNav:after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 1px;
-  top: 50%;
-  margin-top: -0.5px;
-  background: $navbar-item-borders-color;
+	content: "";
+	position: absolute;
+	width: 0%;
+	height: 1px;
+	top: 50%;
+	margin-top: -0.5px;
+	background: $navbar-item-borders-color;
 }
 
 .lineThroughNav:before {
-  left: -2.5px;
+	left: -2.5px;
 }
 
 .lineThroughNav:after {
-  right: 2.5px;
-  background: $navbar-item-borders-color;
-  transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+	right: 2.5px;
+	background: $navbar-item-borders-color;
+	transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .lineThroughNav:hover:before {
-  background: $navbar-item-borders-color;
-  width: 100%;
-  transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+	background: $navbar-item-borders-color;
+	width: 100%;
+	transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .lineThroughNav:hover:after {
-  background: transparent;
-  width: 100%;
-  transition: 0s;
+	background: transparent;
+	width: 100%;
+	transition: 0s;
 }
