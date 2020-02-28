@@ -71,7 +71,6 @@ class Contacts extends Component {
           <div className="ccontent">Playground srl</div>
           <div className="ccontent">Via G. Mazzini 3/C,</div>
           <div className="ccontent">Cernusco Sul Naviglio (Milano)</div>
-          <div className="ccontent">Playground srl</div>
           <div className="ccontent">-</div>
           <div className="ccontent">T +39 0240706003</div>
         </div>
