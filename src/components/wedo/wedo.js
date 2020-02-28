@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
 import "./wedo.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 class WeDo extends Component {
   constructor(props) {
@@ -19,7 +20,10 @@ class WeDo extends Component {
           <h1 className="banner2">
             Consectetur adipiscing elit. Nulla condimentum tortor sem.
           </h1>
-          <div className="btnBanners">THE PROJECTS ></div>
+          <div className="btnBanners">
+            THE PROJECTS{" "}
+            <FontAwesomeIcon icon={faChevronRight} className="arrowR" />
+          </div>
         </div>
         <div className="weImgBoxWeDo">
           <img

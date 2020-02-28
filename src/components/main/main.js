@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { translate } from "react-i18next";
 import "./main.scss";
 import Footer from "../footer/footer";
-import MyCarousel from "../Carousel/carousel";
+import MyCarousel from "../carousel/carousel";
 import Cards from "../cards/cards";
 import Tabs from "../tabs/tabs";
 import WeAre from "../weare/weare";

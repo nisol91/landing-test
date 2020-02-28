@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
 import "./careers.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 class Careers extends Component {
   constructor(props) {
@@ -25,7 +26,10 @@ class Careers extends Component {
           <h1 className="banner2">
             Consectetur adipiscing elit. Nulla condimentum tortor sem.
           </h1>
-          <div className="btnBanners">THE POSITIONS ></div>
+          <div className="btnBanners">
+            THE POSITIONS{" "}
+            <FontAwesomeIcon icon={faChevronRight} className="arrowR" />
+          </div>
         </div>
       </div>
     );

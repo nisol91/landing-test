@@ -4,11 +4,6 @@ import "./carousel.scss";
 import { translate } from "react-i18next";
 import Carousel from "nuka-carousel";
 import styled from "@emotion/styled";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft
-} from "@fortawesome/free-solid-svg-icons";
 
 class MyCarousel extends Component {
   constructor(props) {
@@ -56,6 +51,8 @@ class MyCarousel extends Component {
           left: 50%;
           transform: translateX(-50%);
           content: "";
+          background: url(https://cdn3.iconfinder.com/data/icons/arrows-149/512/directional-chevron-right-512.png);
+          background-size: cover;
           height: 50px !important;
           width: 50px !important;
           display: flex;
@@ -74,6 +71,8 @@ class MyCarousel extends Component {
           left: 50%;
           transform: translateX(-50%);
           content: "";
+          background: url(https://cdn3.iconfinder.com/data/icons/arrows-149/512/directional-chevron-back-512.png);
+          background-size: cover;
           height: 50px !important;
           width: 50px !important;
           display: flex;
@@ -84,9 +83,6 @@ class MyCarousel extends Component {
     `;
     return (
       <div className="carouselContainer">
-        <FontAwesomeIcon icon={faChevronRight} className="arrowCarouselR" />
-        <FontAwesomeIcon icon={faChevronLeft} className="arrowCarouselL" />
-
         <CarouselStyled
           slidesToShow={1}
           dragging={true}

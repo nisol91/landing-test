@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-
 import "./weare.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 class WeAre extends Component {
   constructor(props) {
@@ -26,7 +27,10 @@ class WeAre extends Component {
           <h1 className="banner2">
             Consectetur adipiscing elit. Nulla condimentum tortor sem.
           </h1>
-          <div className="btnBanners">THE PLAYERS ></div>
+          <div className="btnBanners">
+            THE PLAYERS{" "}
+            <FontAwesomeIcon icon={faChevronRight} className="arrowR" />
+          </div>
         </div>
       </div>
     );
