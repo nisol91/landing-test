@@ -51,5 +51,26 @@
     }
   }
 
-  .carouselImg {}
+  .carouselImg {
+  }
+}
+.arrowCarouselR {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  color: rgb(167, 167, 167);
+  z-index: 9997;
+  cursor: pointer;
+  font-size: 30px;
+  pointer-events: none;
+}
+.arrowCarouselL {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  color: rgb(167, 167, 167);
+  z-index: 9997;
+  cursor: pointer;
+  font-size: 30px;
+  pointer-events: none;
 }

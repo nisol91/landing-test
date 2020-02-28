@@ -4,6 +4,11 @@ import "./carousel.scss";
 import { translate } from "react-i18next";
 import Carousel from "nuka-carousel";
 import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronLeft
+} from "@fortawesome/free-solid-svg-icons";
 
 class MyCarousel extends Component {
   constructor(props) {
@@ -50,7 +55,12 @@ class MyCarousel extends Component {
           top: 50%;
           left: 50%;
           transform: translateX(-50%);
-          content: ">";
+          content: "";
+          height: 50px !important;
+          width: 50px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
       .slider-control-centerleft {
@@ -63,12 +73,20 @@ class MyCarousel extends Component {
           top: 50%;
           left: 50%;
           transform: translateX(-50%);
-          content: "<";
+          content: "";
+          height: 50px !important;
+          width: 50px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
     `;
     return (
       <div className="carouselContainer">
+        <FontAwesomeIcon icon={faChevronRight} className="arrowCarouselR" />
+        <FontAwesomeIcon icon={faChevronLeft} className="arrowCarouselL" />
+
         <CarouselStyled
           slidesToShow={1}
           dragging={true}
