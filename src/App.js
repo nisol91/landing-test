@@ -37,11 +37,10 @@ class App extends Component {
             <div className="main" onClick={this.hideNav}>
               {sessionStorage.getItem("value") === null ? (
                 <div className="cookieBanner">
-                  <div className="cbTitle">Informazioni sui Cookie</div>
                   <div className="cbContent">
-                    Per sapere di più su come questo sito utilizza i cookie,
-                    leggi la nostra cookie policy. Chiudendo questo messaggio
-                    informativo o navigando, accetti l'utilizzo dei cookie.
+                    Our website uses cookies to improve your experience. To find
+                    out more about the cookies we use please see our Cookies
+                    Policy.
                   </div>
                   <div
                     className="cbBtn"

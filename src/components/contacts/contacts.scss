@@ -4,78 +4,31 @@
 	box-sizing: border-box;
 }
 
-.footer {
+.contacts {
 	width: 100%;
-	height: 400px;
+	padding: 50px 20px;
 	background: black;
-	border-top: 1px solid grey;
-	margin-bottom: 0;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-}
-
-.iconsContainer {
-	width: 80%;
-	display: flex;
 	justify-content: center;
-	align-items: center;
 }
 
-.navFItem {
-	color: white;
-	margin: 5px 10px;
-	cursor: pointer;
+.contactsSx {
+	width: 30%;
 }
 
-.navFooterContainer {
-	width: 80%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-bottom: 30px;
+.contactsForm {
+	width: 50%;
+	height: 300px;
+	background: grey;
 }
 
-.imgFooter {
-	width: 10%;
-	margin-left: 20px;
-	filter: grayscale(100%);
-}
-
-.socialIcon {
-	font-size: 20px;
-	margin: 20px;
-	color: rgb(99, 96, 102);
-
-
-	&:hover {
-		color: $link-hover-color;
-	}
-}
-
-.reactIcon {
-	font-size: 20px;
-	margin: 20px;
-	color: $link-hover-color;
-
-}
-
-.footerText {
-	margin-top: 2%;
-	font-size: 12px;
+.ctitle {
+	font-size: 50px;
 	color: white;
 }
 
-.nsLink {
-	padding-top: 10px;
-	padding-left: 15px;
-	color: rgb(109, 106, 121) !important;
-
-	&:hover {
-		transform: translateY(-5px);
-		color: rgb(40, 38, 43) !important;
-
-	}
-
+.ccontent {
+	font-size: 20px;
+	color: white;
 }

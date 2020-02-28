@@ -63,8 +63,21 @@ class Contacts extends Component {
   componentDidMount() {}
   render() {
     const { t } = this.props;
-
-    return <div className="footer">contacts</div>;
+    return (
+      <div className="contacts">
+        <div className="contactsSx">
+          <div className="ctitle">contact</div>
+          <div className="ctitle">us.</div>
+          <div className="ccontent">Playground srl</div>
+          <div className="ccontent">Via G. Mazzini 3/C,</div>
+          <div className="ccontent">Cernusco Sul Naviglio (Milano)</div>
+          <div className="ccontent">Playground srl</div>
+          <div className="ccontent">-</div>
+          <div className="ccontent">T +39 0240706003</div>
+        </div>
+        <div className="contactsForm"></div>
+      </div>
+    );
   }
 }
 // export default Contact;

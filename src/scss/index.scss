@@ -66,12 +66,11 @@ a {
   padding: 5px 0;
   position: fixed;
   bottom: 0px;
-  background: lightgray;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9998;
-  flex-direction: column;
 
   .cbTitle {
     font-size: 20px;
@@ -84,20 +83,24 @@ a {
   }
 
   .cbBtn {
-    margin: 5px 0;
+    margin: 5px 30px;
     border: 1px solid black;
-    padding: 5px;
+    padding: 2px;
     cursor: pointer;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 1s;
+    background: black;
+    color: lightgray;
+
+
 
     &:hover {
       transition: 1s;
-      background: black;
-      color: lightgrey;
+      background: lightgray;
+      color: black;
     }
   }
 }
