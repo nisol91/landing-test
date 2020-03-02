@@ -136,6 +136,31 @@
 	.tabsNavItemActive {
 		font-size: 14px !important;
 	}
+
+
+	.weImgBoxWeDo,
+	.weImgBox {
+		width: 100% !important;
+
+	}
+
+	.weImg {
+		max-width: 300% !important;
+	}
+
+	.weare,
+	.wedo {
+		position: relative !important;
+
+	}
+
+	.textBoxWeDo,
+	.textBox {
+		position: absolute !important;
+		top: 20%;
+		left: 20%;
+
+	}
 }
 
 
@@ -204,6 +229,21 @@
 @media (max-width: 600px) {
 	.submitBtn {
 		width: 100% !important;
+	}
+
+	.textHomeBox {
+		align-items: center !important;
+		left: 50% !important;
+		transform: translateX(-50%);
+	}
+
+	.home1 {
+		font-size: 50px !important;
+	}
+
+	.home2 {
+		font-size: 17px !important;
+
 	}
 }
 
