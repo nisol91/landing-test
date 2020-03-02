@@ -29,26 +29,7 @@
   justify-content: center;
   align-items: center;
 
-  &:hover {
-    .hoverDiv {
-      top: 5%;
-      transition: 0.7s;
-    }
 
-    .projectTitle {
-      transition: 0.7s;
-      left: 50% !important;
-      transform: translateX(-50%);
-      opacity: 1;
-    }
-
-    .projectDesc {
-      transition: 0.7s;
-      right: 50% !important;
-      transform: translateX(50%);
-      opacity: 1;
-    }
-  }
 
   .carouselImg {}
 }
