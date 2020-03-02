@@ -31,13 +31,19 @@ class Contacts extends Component {
     var arrLenght = Array.from(event.target.value).length;
     if (arrLenght < 4) {
       this.setState({
-        nameError: "This field must contain at least 4 letters"
+        nameError: "This field must be at least 4 characters long!"
       });
     } else {
       this.setState({
         nameError: null
       });
     }
+    if (arrLenght === 0) {
+      this.setState({
+        nameError: null
+      });
+    }
+    //===
     this.setState({
       name: event.target.value
     });
@@ -47,7 +53,7 @@ class Contacts extends Component {
     var arrLenght = Array.from(event.target.value).length;
     if (arrLenght < 4) {
       this.setState({
-        lastNameError: "This field must contain at least 4 letters"
+        lastNameError: "This field must be at least 4 characters long!"
       });
     } else {
       this.setState({
@@ -59,18 +65,54 @@ class Contacts extends Component {
         lastNameError: null
       });
     }
+    //===
     this.setState({
       lastName: event.target.value
     });
     console.log(this.state.lastName);
   };
   emailHandler = event => {
+    var arrLenght = Array.from(event.target.value).length;
+    if (
+      arrLenght < 5 ||
+      !event.target.value
+        .toLowerCase()
+        .match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    ) {
+      this.setState({
+        emailError: "Invalid email"
+      });
+    } else {
+      this.setState({
+        emailError: null
+      });
+    }
+    if (arrLenght === 0) {
+      this.setState({
+        emailError: null
+      });
+    }
     this.setState({
       email: event.target.value
     });
     console.log(this.state.email);
   };
   messageHandler = event => {
+    var arrLenght = Array.from(event.target.value).length;
+    if (arrLenght < 21) {
+      this.setState({
+        messageError: "This field must be at least 4 characters long!"
+      });
+    } else {
+      this.setState({
+        messageError: null
+      });
+    }
+    if (arrLenght === 0) {
+      this.setState({
+        messageError: null
+      });
+    }
     this.setState({
       message: event.target.value
     });
@@ -125,6 +167,21 @@ class Contacts extends Component {
               )}
             </div>
           </div>
+          <div className="formInputBox3">
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.emailHandler}
+              className="formEmail"
+              placeholder="email"
+            />
+            {this.state.emailError ? (
+              <div className="error">{this.state.emailError}</div>
+            ) : (
+              <div className="error"></div>
+            )}
+          </div>
           <div className="formInputBox2">
             <textarea
               type="text"
@@ -139,16 +196,6 @@ class Contacts extends Component {
             ) : (
               <div className="error"></div>
             )}
-          </div>
-          <div className="formInputBox3">
-            <input
-              type="email"
-              name="email"
-              value={this.state.email}
-              onChange={this.emailHandler}
-              className="formEmail"
-              placeholder="email"
-            />
           </div>
         </form>
       </div>
