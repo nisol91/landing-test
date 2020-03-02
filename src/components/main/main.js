@@ -44,6 +44,10 @@ class Main extends Component {
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll, true);
     scrollSpy.update();
+
+    if (window.scrollY < "100" && window.innerWidth < 768) {
+      this.setState({ toggleNav: true });
+    }
   }
 
   //==================gestione dello scroll
@@ -61,7 +65,7 @@ class Main extends Component {
     if (window.scrollY > "50") {
       this.setState({ toggleNav: true });
     }
-    if (window.scrollY < "100") {
+    if (window.scrollY < "100" && window.innerWidth > 768) {
       this.setState({ toggleNav: false });
     }
   };

@@ -64,7 +64,14 @@
 //================
 
 @media (max-width: 768px) {
+	.nameLastName {
+		flex-direction: column !important;
 
+	}
+
+	.formInputBoxName {
+		width: 100% !important;
+	}
 
 	.navbar {
 		height: auto !important;
@@ -124,6 +131,10 @@
 // Extra Small devices (tablets, 450px and down)
 //================
 
-@media (max-width: 450px) {}
+@media (max-width: 450px) {
+	.error {
+		font-size: 8px !important;
+	}
+}
 
 //=====================******************
