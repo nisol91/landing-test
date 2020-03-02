@@ -19,8 +19,11 @@
 
 .contactsForm {
 	width: 50%;
-	height: 300px;
-	background: grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
 }
 
 .ctitle {
@@ -31,4 +34,68 @@
 .ccontent {
 	font-size: 20px;
 	color: white;
+}
+
+.nameLastName {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+
+.formName,
+.formEmail,
+.formMessage {
+	padding: 10px;
+	background: black;
+	border: 1px solid lightgrey;
+	margin: 10px 0;
+	outline: none;
+	color: white;
+	width: 100%;
+	height: 70%;
+}
+
+.formInputBox1 {
+	height: 100px;
+	width: 49%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.formInputBox2 {
+	height: 200px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.formInputBox3 {
+	height: 100px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+
+
+.formMessage {
+	vertical-align: top;
+}
+
+
+
+.error {
+	color: red;
+	width: 100%;
+	height: 10%;
+	font-size: 12px;
 }

@@ -17,49 +17,67 @@ class Contacts extends Component {
 
     this.state = {
       name: "",
+      nameError: null,
+      lastName: "",
+      lastNameError: "",
       email: "",
-      message: "",
-      mailSent: false,
-      error: null,
-      formVisibility: true,
-      visible: false,
-      formShowEnter: true,
-      mapVisibility: true
+      emailError: "",
+      messageError: "",
+      message: ""
     };
   }
 
-  handleFormSubmit = e => {
-    e.preventDefault();
-    axios({
-      method: "post",
-      headers: { "content-type": "application/json" },
-      data: this.state
-    })
-      .then(result => {
-        this.setState({
-          name: "",
-          email: "",
-          message: "",
-          formVisibility: false,
-          mapVisibility: false
-        });
-
-        this.onDismiss = this.onDismiss.bind(this);
-      })
-      .catch(error => this.setState({ error: error.message }));
-
-    setTimeout(() => {
+  nameHandler = event => {
+    var arrLenght = Array.from(event.target.value).length;
+    if (arrLenght < 4) {
       this.setState({
-        mailSent: true,
-        formVisibility: true,
-        visible: true,
-        mapVisibility: true
+        nameError: "This field must contain at least 4 letters"
       });
-    }, 1000);
+    } else {
+      this.setState({
+        nameError: null
+      });
+    }
+    this.setState({
+      name: event.target.value
+    });
+    console.log(this.state.name);
   };
-  onDismiss() {
-    this.setState({ visible: false });
-  }
+  lastNameHandler = event => {
+    var arrLenght = Array.from(event.target.value).length;
+    if (arrLenght < 4) {
+      this.setState({
+        lastNameError: "This field must contain at least 4 letters"
+      });
+    } else {
+      this.setState({
+        lastNameError: null
+      });
+    }
+    if (arrLenght === 0) {
+      this.setState({
+        lastNameError: null
+      });
+    }
+    this.setState({
+      lastName: event.target.value
+    });
+    console.log(this.state.lastName);
+  };
+  emailHandler = event => {
+    this.setState({
+      email: event.target.value
+    });
+    console.log(this.state.email);
+  };
+  messageHandler = event => {
+    this.setState({
+      message: event.target.value
+    });
+    console.log(this.state.message);
+  };
+
+  onDismiss() {}
   componentDidMount() {}
   render() {
     const { t } = this.props;
@@ -74,7 +92,65 @@ class Contacts extends Component {
           <div className="ccontent">-</div>
           <div className="ccontent">T +39 0240706003</div>
         </div>
-        <div className="contactsForm"></div>
+        <form className="contactsForm">
+          <div className="nameLastName">
+            <div className="formInputBox1">
+              <input
+                type="text"
+                name="name"
+                value={this.state.name}
+                onChange={this.nameHandler}
+                placeholder="name"
+                className="formName"
+              />
+              {this.state.nameError ? (
+                <div className="error">{this.state.nameError}</div>
+              ) : (
+                <div className="error"></div>
+              )}
+            </div>
+            <div className="formInputBox1">
+              <input
+                type="text"
+                name="lastName"
+                value={this.state.lastName}
+                onChange={this.lastNameHandler}
+                className="formName"
+                placeholder="last name"
+              />
+              {this.state.lastNameError ? (
+                <div className="error">{this.state.lastNameError}</div>
+              ) : (
+                <div className="error"></div>
+              )}
+            </div>
+          </div>
+          <div className="formInputBox2">
+            <textarea
+              type="text"
+              name="message"
+              value={this.state.message}
+              onChange={this.messageHandler}
+              className="formMessage"
+              placeholder="message"
+            />
+            {this.state.messageError ? (
+              <div className="error">{this.state.messageError}</div>
+            ) : (
+              <div className="error"></div>
+            )}
+          </div>
+          <div className="formInputBox3">
+            <input
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.emailHandler}
+              className="formEmail"
+              placeholder="email"
+            />
+          </div>
+        </form>
       </div>
     );
   }
