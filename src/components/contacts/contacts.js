@@ -1,15 +1,8 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./contacts.scss";
 import { translate } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faReact,
-  faFacebookF,
-  faInstagram,
-  faLinkedin
-} from "@fortawesome/free-brands-svg-icons";
-import logo from "../../assets/images/logo-playground-white.png";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 class Contacts extends Component {
   constructor(props) {
@@ -23,7 +16,8 @@ class Contacts extends Component {
       email: "",
       emailError: "",
       messageError: "",
-      message: ""
+      message: "",
+      showSubmitToast: false
     };
   }
 
@@ -119,7 +113,25 @@ class Contacts extends Component {
     console.log(this.state.message);
   };
 
-  onDismiss() {}
+  handleSubmit = event => {
+    console.log("submit");
+    if (this.state.messageError === null && this.state.emailError === null) {
+      this.setState({
+        showSubmitToast: true
+      });
+      setTimeout(() => {
+        this.setState({ showSubmitToast: false });
+      }, 2500);
+    } else {
+      this.setState({
+        messageError: "Required",
+        emailError: "Required"
+      });
+    }
+
+    event.preventDefault();
+  };
+
   componentDidMount() {}
   render() {
     const { t } = this.props;
@@ -134,9 +146,9 @@ class Contacts extends Component {
           <div className="ccontent">-</div>
           <div className="ccontent">T +39 0240706003</div>
         </div>
-        <form className="contactsForm">
+        <form className="contactsForm" onSubmit={this.handleSubmit}>
           <div className="nameLastName">
-            <div className="formInputBox1">
+            <div className="formInputBoxName">
               <input
                 type="text"
                 name="name"
@@ -151,7 +163,7 @@ class Contacts extends Component {
                 <div className="error"></div>
               )}
             </div>
-            <div className="formInputBox1">
+            <div className="formInputBoxName">
               <input
                 type="text"
                 name="lastName"
@@ -167,7 +179,7 @@ class Contacts extends Component {
               )}
             </div>
           </div>
-          <div className="formInputBox3">
+          <div className="formInputBoxMail">
             <input
               type="text"
               name="email"
@@ -182,7 +194,7 @@ class Contacts extends Component {
               <div className="error"></div>
             )}
           </div>
-          <div className="formInputBox2">
+          <div className="formInputBoxMessage">
             <textarea
               type="text"
               name="message"
@@ -197,7 +209,16 @@ class Contacts extends Component {
               <div className="error"></div>
             )}
           </div>
+          <div className="submitBtnRow">
+            <div className="submitBtn">
+              <input type="submit" value="SEND" className="submitBtnInput" />
+              <FontAwesomeIcon icon={faChevronRight} className="iconSubmit" />
+            </div>
+          </div>
         </form>
+        {this.state.showSubmitToast ? (
+          <div className="submitToast fade-in">Message successfully sent!</div>
+        ) : null}
       </div>
     );
   }
