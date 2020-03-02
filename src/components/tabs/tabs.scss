@@ -24,6 +24,7 @@
   overflow-y: scroll;
   background: grey;
 }
+
 .tabsNavItem {
   transition: 0.5s;
   width: 100%;
@@ -34,7 +35,10 @@
   border-bottom: 1px solid lightgrey;
   cursor: pointer;
   color: black;
+  font-size: 16px;
+
 }
+
 .tabsNavItemActive {
   transition: 0.5s;
   width: 100%;
@@ -46,12 +50,15 @@
   cursor: pointer;
   color: white;
   font-weight: bold;
+  font-size: 17px;
 }
+
 .tabNavIcon {
   transition: 0.5s;
   margin-left: 5%;
   color: black;
 }
+
 .tabNavIconActive {
   color: white;
   transition: 0.5s;
@@ -65,12 +72,13 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-size: 22px;
+  font-size: 19px;
 }
 
 .tabSpinner {
   animation: rotation 0.7s infinite linear;
 }
+
 @keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);

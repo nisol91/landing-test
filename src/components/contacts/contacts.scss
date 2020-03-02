@@ -27,13 +27,13 @@
 }
 
 .ctitle {
-	font-size: 50px;
+	font-size: 70px;
 	color: white;
 	font-weight: bold;
 }
 
 .ccontent {
-	font-size: 20px;
+	font-size: 17px;
 	color: white;
 }
 
@@ -119,13 +119,15 @@
 		align-items: center;
 		cursor: pointer;
 		color: black;
-		transition: 1s;
+
 		position: relative;
 
 		.iconSubmit {
+
+			pointer-events: none;
 			position: absolute;
 			top: 32%;
-			right: 30px;
+			right: 35px;
 		}
 
 		.submitBtnInput {
@@ -135,15 +137,17 @@
 			border: none;
 			outline: none;
 
+
+
 			&:hover {
-				transition: 1s;
+
 				background: black;
 				color: white;
 			}
 		}
 
 		&:hover {
-			transition: 1s;
+
 			background: black;
 			color: white;
 			border: 1px solid white;

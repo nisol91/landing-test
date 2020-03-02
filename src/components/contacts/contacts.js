@@ -41,7 +41,6 @@ class Contacts extends Component {
     this.setState({
       name: event.target.value
     });
-    console.log(this.state.name);
   };
   lastNameHandler = event => {
     var arrLenght = Array.from(event.target.value).length;
@@ -63,7 +62,6 @@ class Contacts extends Component {
     this.setState({
       lastName: event.target.value
     });
-    console.log(this.state.lastName);
   };
   emailHandler = event => {
     var arrLenght = Array.from(event.target.value).length;
@@ -89,7 +87,6 @@ class Contacts extends Component {
     this.setState({
       email: event.target.value
     });
-    console.log(this.state.email);
   };
   messageHandler = event => {
     var arrLenght = Array.from(event.target.value).length;
@@ -110,11 +107,9 @@ class Contacts extends Component {
     this.setState({
       message: event.target.value
     });
-    console.log(this.state.message);
   };
 
   handleSubmit = event => {
-    console.log("submit");
     if (this.state.messageError === null && this.state.emailError === null) {
       this.setState({
         showSubmitToast: true
