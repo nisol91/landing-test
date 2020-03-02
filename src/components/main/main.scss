@@ -8,7 +8,7 @@
 	flex-direction: column;
 
 	.home1 {
-		font-size: 50px;
+		font-size: 70px;
 		font-weight: bold;
 		color: $title-color;
 		text-align: left;
@@ -61,6 +61,8 @@
 	background: $navbar-color;
 	height: 50px;
 	transition: 0.5s;
+	z-index: 9998 !important;
+
 }
 
 .logoNav {

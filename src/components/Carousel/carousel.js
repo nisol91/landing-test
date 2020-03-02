@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./carousel.scss";
 import { translate } from "react-i18next";
 import Carousel from "nuka-carousel";

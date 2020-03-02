@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Async from "react-async";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";

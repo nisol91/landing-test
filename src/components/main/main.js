@@ -9,7 +9,6 @@ import WeAre from "../weare/weare";
 import WeDo from "../wedo/wedo";
 import Careers from "../careers/careers";
 import Contacts from "../contacts/contacts";
-
 import {
   Link as ScrollLink,
   Element,
@@ -68,7 +67,9 @@ class Main extends Component {
   };
 
   showNavbar = () => {
-    this.setState({ hideNavbar: !this.state.hideNavbar });
+    this.setState({
+      hideNavbar: !this.state.hideNavbar
+    });
   };
 
   //RENDER DEL COMPONENTE=======
@@ -87,15 +88,16 @@ class Main extends Component {
             height={15}
             strokeWidth={1}
             rotate={0}
-            color="black"
+            color="grey"
             borderRadius={0}
             animationDuration={0.5}
+            className="hamburgerMenu"
           />
         </div>
 
         {/* NAVBAR======== */}
         <div
-          className={`navbar fixedMobileNav  ${this.state.toggleNav &&
+          className={`navbar ${this.state.toggleNav &&
             "coloredNav slide-in-top"} ${this.state.hideNavbar &&
             "slide-out-top hide"} `}
         >
