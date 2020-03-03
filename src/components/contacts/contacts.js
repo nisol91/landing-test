@@ -92,7 +92,7 @@ class Contacts extends Component {
     var arrLenght = Array.from(event.target.value).length;
     if (arrLenght < 21) {
       this.setState({
-        messageError: "This field must be at least 4 characters long!"
+        messageError: "This field must be at least 20 characters long!"
       });
     } else {
       this.setState({
@@ -110,9 +110,17 @@ class Contacts extends Component {
   };
 
   handleSubmit = event => {
-    if (this.state.messageError === null && this.state.emailError === null) {
+    if (
+      this.state.messageError === null &&
+      this.state.message !== "" &&
+      this.state.emailError === null
+    ) {
       this.setState({
-        showSubmitToast: true
+        showSubmitToast: true,
+        name: "",
+        lastName: "",
+        email: "",
+        message: ""
       });
       setTimeout(() => {
         this.setState({ showSubmitToast: false });

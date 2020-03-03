@@ -27,6 +27,10 @@
 	.tabsContItem {
 		font-size: 22px !important;
 	}
+
+	.cardImg2 {
+		margin-left: 0 !important;
+	}
 }
 
 //================
@@ -80,6 +84,10 @@
 //================
 
 @media (max-width: 992px) {
+	.cardImg2 {
+		margin-left: 0 !important;
+	}
+
 	.navFooterContainer {
 		flex-direction: column !important;
 		width: 100%;
@@ -100,6 +108,7 @@
 
 	.contacts {
 		flex-direction: column !important;
+		align-items: center !important;
 	}
 
 	.contactsSx {
@@ -130,11 +139,11 @@
 	}
 
 	.tabsNavItem {
-		font-size: 13px !important;
+		font-size: 12px !important;
 	}
 
 	.tabsNavItemActive {
-		font-size: 14px !important;
+		font-size: 13px !important;
 	}
 
 
@@ -146,6 +155,12 @@
 
 	.weImg {
 		max-width: 300% !important;
+		filter: opacity(0.4) !important;
+	}
+
+	.weImg2 {
+		filter: opacity(0.95) !important;
+
 	}
 
 	.weare,
@@ -156,10 +171,32 @@
 
 	.textBoxWeDo,
 	.textBox {
+		width: 100% !important;
+		align-items: center !important;
 		position: absolute !important;
 		top: 20%;
-		left: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 
+	.btnBanners {
+		position: absolute !important;
+		top: 90%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.banner2 {
+		font-size: 13px !important;
+		text-align: center !important;
+	}
+
+	.textBoxWeDo {
+
+		.banner2,
+		.banner1 {
+			color: white !important;
+		}
 	}
 }
 
@@ -219,6 +256,13 @@
 		display: none !important;
 	}
 
+	.weImg2 {}
+
+	.weImgBoxWeDo {
+		display: flex;
+		justify-content: flex-end !important;
+	}
+
 
 }
 
@@ -227,6 +271,11 @@
 //================
 
 @media (max-width: 600px) {
+	.banner2 {
+		font-size: 11px !important;
+		text-align: center !important;
+	}
+
 	.submitBtn {
 		width: 100% !important;
 	}
@@ -257,7 +306,11 @@
 	}
 
 	.ctitle {
-		font-size: 60px !important;
+		font-size: 50px !important;
+	}
+
+	.cardImg2 {
+		margin-left: 40% !important;
 	}
 }
 

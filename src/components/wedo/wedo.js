@@ -29,7 +29,7 @@ class WeDo extends Component {
           <img
             src={require("../../assets/images/banner-we-do.jpg")}
             alt=""
-            className="weImg"
+            className="weImg weImg2"
           />
         </div>
       </div>
